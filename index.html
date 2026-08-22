@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Bishwajit Saha — Research Scientist, IBM Research</title>
+<title>Bishwajit Saha — Research Scientist, MIT-IBM Watson AI Lab</title>
 <meta name="description" content="Bishwajit Saha is a Research Scientist at the MIT-IBM Watson AI Lab, IBM Research. He works on energy-based language models, associative memory, and Mixture-of-Experts routing.">
 <meta name="author" content="Bishwajit Saha">
 
@@ -243,6 +243,11 @@ p:last-child{margin-bottom:0}
 .portrait,.portrait-fb{
   width:132px;height:132px;border-radius:50%;
   margin:0 auto 1.15rem;display:block;object-fit:cover;
+  /* Which part of the photo survives the circular crop.
+     50% = horizontal centre. Second value is vertical:
+     0% = top of photo, 50% = middle, 100% = bottom.
+     Lower the second number if the head is still cut off. */
+  object-position:50% 22%;
   border:3px solid var(--surface);
   box-shadow:0 0 0 1px var(--rule),0 6px 20px -8px rgba(16,23,40,.28);
 }
@@ -316,7 +321,9 @@ p:last-child{margin-bottom:0}
 .news a:hover{border-bottom-color:var(--accent)}
 @media (max-width:620px){.news li{grid-template-columns:1fr;gap:.3rem}}
 
-.threads{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem}
+/* four cards: always 2x2 so the last one never sits alone */
+.threads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}
+@media (max-width:560px){.threads{grid-template-columns:1fr}}
 .thread{
   background:var(--surface);border:1px solid var(--rule);border-radius:12px;
   padding:1.5rem 1.4rem;box-shadow:var(--card-shadow);
@@ -366,6 +373,15 @@ p:last-child{margin-bottom:0}
 }
 .bibtex.open{display:block}
 
+.scholar-all{
+  margin:2rem 0 0;padding-top:1.6rem;border-top:1px solid var(--rule-soft);
+}
+.scholar-all a{
+  font-family:var(--font-display);font-weight:600;font-size:.975rem;
+  color:var(--accent);text-decoration:none;
+}
+.scholar-all a:hover{border-bottom:1px solid var(--accent)}
+
 .timeline{position:relative;padding-left:1.95rem}
 .timeline::before{content:"";position:absolute;left:5px;top:.6rem;bottom:.6rem;width:1px;background:var(--rule)}
 .tl-item{position:relative;padding-bottom:2rem}
@@ -379,7 +395,9 @@ p:last-child{margin-bottom:0}
 .tl-item h3{font-size:1.09rem;margin-bottom:.15rem}
 .tl-where{font-size:.965rem;color:var(--text-dim);margin:0}
 
-.service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:2.2rem}
+/* Two columns on desktop, so "Beyond research" falls onto its own row */
+.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem 2.4rem}
+@media (max-width:620px){.service-grid{grid-template-columns:1fr;gap:2.2rem}}
 .service-grid h3{font-size:1rem;margin-bottom:.8rem}
 .service-grid ul{list-style:none;margin:0;padding:0;font-size:.965rem;color:var(--text-dim)}
 .service-grid li{padding:.36rem 0;border-bottom:1px solid var(--rule-soft)}
@@ -427,7 +445,7 @@ footer a:hover{color:var(--accent)}
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
   </nav>
-  <button class="theme-btn" id="themeBtn" aria-label="Switch colour theme">
+  <button class="theme-btn" id="themeBtn" aria-label="Switch color theme">
     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
   </button>
@@ -437,7 +455,7 @@ footer a:hover{color:var(--accent)}
   <canvas id="field" aria-hidden="true"></canvas>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="hero-inner">
-    <p class="role">Research Scientist &middot; MIT-IBM Watson AI Lab</p>
+    <p class="role">Research Scientist &middot; IBM Research</p>
     <h1>Bishwajit Saha</h1>
     <p class="thesis">I build language models that <em>think by descending</em> — where a forward pass is not a fixed stack of layers but relaxation on an energy landscape, and where memory, attention, and expert routing all fall out of the same variational principle.</p>
   </div>
@@ -477,8 +495,6 @@ footer a:hover{color:var(--accent)}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11.5V17c3.5 2.2 8.5 2.2 12 0v-5.5"/></svg>Google Scholar</a></li>
       <li><a href="https://openreview.net/profile?id=~Bishwajit_Saha1">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg>OpenReview</a></li>
-      <li><a href="https://github.com/bsaha205">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.2-1.5 6.2-6.7A5.2 5.2 0 0 0 19.9 5a4.9 4.9 0 0 0-.1-3.6s-1.1-.3-3.6 1.4a12.4 12.4 0 0 0-6.4 0C7.3 1.1 6.2 1.4 6.2 1.4A4.9 4.9 0 0 0 6.1 5a5.2 5.2 0 0 0-1.4 3.6c0 5.2 3.2 6.4 6.2 6.7a3.4 3.4 0 0 0-.9 2.6V22"/></svg>GitHub</a></li>
       <li><a href="https://www.linkedin.com/in/bishwajit-saha-2b5493147/">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></li>
     </ul>
@@ -494,9 +510,10 @@ footer a:hover{color:var(--accent)}
     <section id="about">
       <p class="eyebrow reveal">About</p>
       <div class="reveal">
-        <p>I am a Research Scientist at the <b>MIT-IBM Watson AI Lab</b>, IBM Research, where I work on the architecture of large language models — specifically on what happens when you stop treating a transformer as a feedforward stack and start treating it as a dynamical system with an energy function.</p>
-        <p>That reframing is not cosmetic. It gives inference a stopping criterion, gives depth a meaning beyond "how many blocks we could afford," and gives expert routing in Mixture-of-Experts models a principled objective instead of a hand-tuned auxiliary loss. Our ICLR 2026 paper, NRGPT, is the first full language model built this way; the follow-on work asks how much compute you can save when a model is allowed to decide for itself that it has converged.</p>
-        <p>Before this I completed my PhD in Computer Science at <b>Rensselaer Polytechnic Institute</b> with Mohammed J. Zaki, where I worked on making discrete optimization differentiable by routing it through associative memory dynamics. Before graduate school I spent roughly three years building production systems — most of it at <b>bKash</b>, the mobile financial platform that moves money for more than 65 million people in Bangladesh. That period shapes how I evaluate research: I am persistently interested in whether a method survives contact with real scale.</p>
+        <p>I am a Research Scientist at the <b>MIT-IBM Watson AI Lab</b>, IBM Research. I work on language model architecture, mostly on what changes when you treat a transformer as a dynamical system with an energy function instead of a fixed stack of layers.</p>
+        <p>Once the forward pass is minimizing something, inference has a natural place to stop, and depth stops being a number you picked because you could afford it. Expert routing falls out of the same energy rather than a load-balancing loss bolted on the side. NRGPT, our ICLR 2026 paper, was the first full language model we built this way. The follow-up work asks how much compute you save when the model decides for itself that it has converged. Right now I am also scaling the architecture to billion-parameter models, to see whether the energy formulation still holds at that size.</p>
+        <p>I did my PhD at <b>Rensselaer Polytechnic Institute</b> with Mohammed J. Zaki, working on clustering. ClAM and DClAM came out of that. Both let points settle toward prototypes under associative-memory dynamics, which turns a discrete assignment problem into something you can train with gradient descent.</p>
+        <p>Before graduate school I spent roughly four years as an engineer, most of it at <b>bKash</b>, the largest mobile financial platform in Bangladesh, used by more than 65 million people. That background is probably why I care as much about whether something trains on a real cluster as about how it looks on a benchmark.</p>
 
         <div class="callout">
           <svg class="bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
@@ -510,7 +527,7 @@ footer a:hover{color:var(--accent)}
       <ul class="news reveal">
         <li>
           <time datetime="2026-06">June 2026</time>
-          <div>Submitted <b>Adaptive Test-Time Compute with Energy Transformer Modules</b> to NeurIPS 2026, and served on the NeurIPS 2026 review committee.</div>
+          <div>Served on the review committee for <b>NeurIPS 2026</b>.</div>
         </li>
         <li>
           <time datetime="2026-04">April 2026</time>
@@ -531,6 +548,22 @@ footer a:hover{color:var(--accent)}
         <li>
           <time datetime="2025-01">January 2025</time>
           <div>Completed my <b>PhD in Computer Science</b> at Rensselaer Polytechnic Institute.</div>
+        </li>
+        <li>
+          <time datetime="2024-12">December 2024</time>
+          <div>Presented <b>Deep Clustering with Associative Memories</b> at the Workshop on Machine Learning and Compression at <b>NeurIPS 2024</b> in Vancouver.</div>
+        </li>
+        <li>
+          <time datetime="2023-07">July 2023</time>
+          <div>Presented <b>End-to-end Differentiable Clustering with Associative Memories</b> at <b>ICML 2023</b> in Honolulu.</div>
+        </li>
+        <li>
+          <time datetime="2022-12">December 2022</time>
+          <div>Completed my <b>MSc in Computer Science</b> at Rensselaer Polytechnic Institute.</div>
+        </li>
+        <li>
+          <time datetime="2021-01">January 2021</time>
+          <div>Started my <b>PhD in Computer Science</b> at Rensselaer Polytechnic Institute.</div>
         </li>
       </ul>
     </section>
@@ -553,6 +586,11 @@ footer a:hover{color:var(--accent)}
           <h3>Sparse routing &amp; test-time compute</h3>
           <p>Deriving Mixture-of-Experts routing from a free-energy functional instead of bolting on a load-balancing penalty, and letting a model halt when its energy has converged rather than after a fixed budget.</p>
         </article>
+        <article class="thread">
+          <span class="n">04</span>
+          <h3>Clustering and health data</h3>
+          <p>ClAM and DClAM make cluster assignment differentiable by letting points settle toward prototypes under associative-memory dynamics. The same interest pulls me toward health data: in an autism screening study we used clustering to see what structure the data holds once you set the labels aside.</p>
+        </article>
       </div>
     </section>
 
@@ -567,7 +605,7 @@ footer a:hover{color:var(--accent)}
         </div>
         <h3><a href="https://arxiv.org/abs/2512.16762">NRGPT: An Energy-based Alternative for GPT</a></h3>
         <p class="authors">Nima Dehmamy<span class="eq">*</span>, Benjamin Hoover<span class="eq">*</span>, <b>Bishwajit Saha</b><span class="eq">*</span>, Leo Kozachkov, Jean-Jacques Slotine, Dmitry Krotov<span class="eq">*</span></p>
-        <p class="note">A language model whose forward pass minimises a scalar energy rather than executing a fixed layer stack, unifying autoregressive generation with associative-memory dynamics. Holds up across tasks from algebraic reasoning to open-domain generation.</p>
+        <p class="note">A language model whose forward pass minimizes a scalar energy rather than executing a fixed layer stack, unifying autoregressive generation with associative-memory dynamics. Holds up across tasks from algebraic reasoning to open-domain generation.</p>
         <div class="pub-actions">
           <a class="mini" href="https://arxiv.org/abs/2512.16762">arXiv</a>
           <button class="mini" data-bib="nrgpt">BibTeX</button>
@@ -577,23 +615,14 @@ footer a:hover{color:var(--accent)}
 
       <article class="pub reveal">
         <div class="pub-meta">
-          <span class="venue review">NeurIPS — under review</span>
-          <span class="year">2026</span>
-        </div>
-        <h3>Adaptive Test-Time Compute with Energy Transformer Modules</h3>
-        <p class="authors">Bharat Runwal, <b>Bishwajit Saha</b>, Benjamin Hoover, Dmitry Krotov, Mauro Martino, Nima Dehmamy</p>
-        <p class="note">A nine-architecture factorial study at 400M–1B scale separating two recurrent-transformer computation modes — distributed refinement under energy attention versus concentrated construction under standard attention — giving 12.8–19% FLOP savings from adaptive halting at no quality cost.</p>
-      </article>
-
-      <article class="pub reveal">
-        <div class="pub-meta">
           <span class="venue">NFAM Workshop @ ICLR</span>
           <span class="year">2026</span>
         </div>
-        <h3>Boltzmann Routing for Energy-Compatible Mixture of Experts</h3>
+        <h3><a href="https://openreview.net/pdf/ef2572853f80e67533fb2e61c4cb16e9156d15e7.pdf">Boltzmann Routing for Energy-Compatible Mixture of Experts</a></h3>
         <p class="authors">Bharat Runwal, <b>Bishwajit Saha</b>, Benjamin Hoover, Mauro Martino, Nima Dehmamy</p>
         <p class="note">An auxiliary-loss-free routing method derived from a free-energy functional, with a proof of exact energy compatibility and a formal attention–routing duality inside Energy Transformers.</p>
         <div class="pub-actions">
+          <a class="mini" href="https://openreview.net/pdf/ef2572853f80e67533fb2e61c4cb16e9156d15e7.pdf">Paper</a>
           <button class="mini" data-bib="boltzmann">BibTeX</button>
         </div>
         <pre class="bibtex" id="bib-boltzmann"></pre>
@@ -605,10 +634,12 @@ footer a:hover{color:var(--accent)}
           <span class="year">2025 / 2024</span>
           <span class="flag">First author</span>
         </div>
-        <h3>Deep Clustering with Associative Memories</h3>
+        <h3><a href="https://openreview.net/forum?id=Awsb8jhEx3">Deep Clustering with Associative Memories</a></h3>
         <p class="authors"><b>Bishwajit Saha</b>, Dmitry Krotov, Mohammed J. Zaki, Parikshit Ram</p>
         <p class="note">DClAM couples an autoencoder with associative memories for end-to-end differentiable deep clustering, learning representations and latent-space clusters simultaneously under a single simplified objective. An extended version is under review at KDD 2026.</p>
         <div class="pub-actions">
+          <a class="mini" href="https://openreview.net/forum?id=Awsb8jhEx3">OpenReview</a>
+          <a class="mini" href="https://arxiv.org/abs/2601.00963">arXiv</a>
           <button class="mini" data-bib="dclam">BibTeX</button>
         </div>
         <pre class="bibtex" id="bib-dclam"></pre>
@@ -625,10 +656,32 @@ footer a:hover{color:var(--accent)}
         <p class="note">ClAM uncovers a connection between associative memory dynamics and the discrete assignment inherent to clustering, yielding an unconstrained continuous relaxation that makes the whole pipeline differentiable and trainable by SGD.</p>
         <div class="pub-actions">
           <a class="mini" href="https://proceedings.mlr.press/v202/saha23a.html">PMLR</a>
+          <a class="mini" href="https://arxiv.org/abs/2306.03209">arXiv</a>
           <button class="mini" data-bib="clam">BibTeX</button>
         </div>
         <pre class="bibtex" id="bib-clam"></pre>
       </article>
+
+      <article class="pub reveal">
+        <div class="pub-meta">
+          <span class="venue">Healthcare Analytics — Elsevier</span>
+          <span class="year">2024</span>
+          <span class="flag">Supervising author</span>
+        </div>
+        <h3><a href="https://www.sciencedirect.com/science/article/pii/S2772442523001600">An evaluation of machine learning approaches for early diagnosis of autism spectrum disorder</a></h3>
+        <p class="authors">Rownak Ara Rasul, Promy Saha, Diponkor Bala, S M Rakib Ul Karim, Md. Ibrahim Abdullah, <b>Bishwajit Saha</b></p>
+        <p class="note">A systematic comparison of eight classifiers and five clustering algorithms on paediatric, adult, and combined ASD screening datasets, with chi-square feature selection and per-model hyperparameter search. Spectral clustering proved strongest in the unlabelled setting — an early instance of the clustering questions I would later pursue with associative memories.</p>
+        <div class="pub-actions">
+          <a class="mini" href="https://doi.org/10.1016/j.health.2023.100293">DOI</a>
+          <a class="mini" href="https://arxiv.org/abs/2309.11646">arXiv</a>
+          <button class="mini" data-bib="asd">BibTeX</button>
+        </div>
+        <pre class="bibtex" id="bib-asd"></pre>
+      </article>
+
+      <p class="scholar-all reveal">
+        <a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=cYMfgbcAAAAJ">See the full publication list on Google Scholar &rarr;</a>
+      </p>
     </section>
 
     <section id="experience">
@@ -640,22 +693,37 @@ footer a:hover{color:var(--accent)}
           <p class="tl-where">IBM Research, MIT-IBM Watson AI Lab — energy-based LLM architecture, MoE routing, distributed pretraining</p>
         </div>
         <div class="tl-item">
-          <p class="tl-when">2021 — Jan 2025</p>
+          <p class="tl-when">Jan 2021 — Jan 2025</p>
           <h3>PhD, Computer Science</h3>
           <p class="tl-where">Rensselaer Polytechnic Institute — advisor Mohammed J. Zaki</p>
         </div>
         <div class="tl-item">
-          <p class="tl-when">Summer 2023</p>
-          <h3>Research Intern</h3>
-          <p class="tl-where">IBM Research</p>
+          <p class="tl-when">Jan 2021 — Dec 2022</p>
+          <h3>MSc, Computer Science</h3>
+          <p class="tl-where">Rensselaer Polytechnic Institute — earned en route to the PhD</p>
         </div>
         <div class="tl-item">
-          <p class="tl-when">2017 — 2021</p>
-          <h3>Software Engineer</h3>
-          <p class="tl-where">bKash and REVE Systems, Dhaka — production financial and telecom systems at national scale</p>
+          <p class="tl-when">Summer 2022 &amp; Summer 2023</p>
+          <h3>Summer AI Researcher</h3>
+          <p class="tl-where">IBM Research, Cambridge — two internships on end-to-end differentiable clustering with associative memories</p>
         </div>
         <div class="tl-item">
-          <p class="tl-when">2013 — 2017</p>
+          <p class="tl-when">May 2019 — Jan 2021</p>
+          <h3>Senior Engineer, R&amp;D</h3>
+          <p class="tl-where">bKash, Dhaka — loan origination system and VISA/bank payment gateway integrations for Bangladesh's largest mobile financial platform, 65M+ users</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-when">Oct 2017 — Apr 2019</p>
+          <h3>Senior Software Engineer</h3>
+          <p class="tl-where">REVE Systems, Dhaka — government-scale web platforms (OISF, BCC Billing)</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-when">Aug 2017 — Sep 2017</p>
+          <h3>Lecturer, Computer Science and Engineering</h3>
+          <p class="tl-where">Bangladesh University of Business and Technology — structured programming, data structures, graphics design</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-when">Feb 2013 — Sep 2017</p>
           <h3>BSc, Computer Science and Engineering</h3>
           <p class="tl-where">Bangladesh University of Engineering and Technology (BUET)</p>
         </div>
@@ -667,29 +735,31 @@ footer a:hover{color:var(--accent)}
       <div class="service-grid reveal">
         <div>
           <h3>Reviewing</h3>
-          <!-- EDIT: keep only venues you have actually reviewed for -->
           <ul>
-            <li>NeurIPS</li>
-            <li>ICLR</li>
-            <li>ICML</li>
-            <li>KDD</li>
-            <li>AAAI</li>
+            <li>NeurIPS 2023, 2024, 2025, 2026</li>
+            <li>ICML 2024, 2025, 2026</li>
+            <li>ICLR 2025, 2026</li>
+            <li>AAAI 2026</li>
+            <li>AISTATS 2025</li>
+            <li>MemVis Workshop @ ICCV 2025</li>
           </ul>
         </div>
         <div>
           <h3>Talks &amp; presentations</h3>
           <ul>
+            <li>ICLR 2026 &mdash; main conference</li>
             <li>NFAM Workshop @ ICLR 2025</li>
             <li>ML &amp; Compression @ NeurIPS 2024</li>
-            <li>ICML 2023 — poster</li>
+            <li>ICML 2023 &mdash; main conference</li>
           </ul>
         </div>
         <div>
           <h3>Beyond research</h3>
           <ul>
             <li>Bengali literature and poetry</li>
-            <li>Container gardening</li>
-            <li>Argentina, permanently</li>
+            <li>History</li>
+            <li>Fiction</li>
+            <li>Gardening</li>
           </ul>
         </div>
       </div>
@@ -788,6 +858,18 @@ footer a:hover{color:var(--accent)}
 '  booktitle = {Proceedings of the 40th International Conference on Machine Learning},\n' +
 '  series    = {PMLR}, volume = {202}, pages = {29649--29670},\n' +
 '  year      = {2023}\n' +
+'}',
+    asd:
+'@article{rasul2024evaluation,\n' +
+'  title   = {An evaluation of machine learning approaches for early diagnosis\n' +
+'             of autism spectrum disorder},\n' +
+'  author  = {Rasul, Rownak Ara and Saha, Promy and Bala, Diponkor and\n' +
+'             Karim, S M Rakib Ul and Abdullah, Md. Ibrahim and Saha, Bishwajit},\n' +
+'  journal = {Healthcare Analytics},\n' +
+'  volume  = {5},\n' +
+'  pages   = {100293},\n' +
+'  year    = {2024},\n' +
+'  doi     = {10.1016/j.health.2023.100293}\n' +
 '}'
   };
   Object.keys(BIB).forEach(function(k){
